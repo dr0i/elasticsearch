@@ -205,7 +205,7 @@ public class TransportShardBulkAction extends TransportWriteAction<BulkShardRequ
                     logger.trace((Supplier<?>) () -> new ParameterizedMessage("{} failed to execute bulk item ({}) {}",
                             request.shardId(), docWriteRequest.opType().getLowercase(), request), failure);
                 } else {
-                    logger.debug((Supplier<?>) () -> new ParameterizedMessage("{} failed to execute bulk item ({}) {}",
+                    logger.info((Supplier<?>) () -> new ParameterizedMessage("{} failed to execute bulk item ({}) {}",
                             request.shardId(), docWriteRequest.opType().getLowercase(), request), failure);
                 }
                 // if its a conflict failure, and we already executed the request on a primary (and we execute it
